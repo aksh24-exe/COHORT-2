@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="getAnimalData()">Get Animal Data</button>
+    <script>
+      // There are two way to fetch data 1. Promises and 2. async await
+      // 1. way
+      //   function getAnimalData() {
+      //     fetch("https://fakerapi.it/api/v1/persons").then((response) => {
+      //       response.json().then((finalData) => {
+      //         console.log(finalData);
+      //       });
+      //     });
+      //   }
+      // 2. way
+      async function getAnimalData() {
+        const response = await fetch("https://fakerapi.it/api/v1/persons");
+        const finalData = await response.json();
+        console.log(finalData);
+      }
+    </script>
+  </body>
+</html>
